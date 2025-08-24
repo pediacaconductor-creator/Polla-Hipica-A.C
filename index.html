@@ -4,79 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>POLLA MLB EL PASEO EL LIMÓN</title>
-  <meta name="description" content="Gestión de apuestas deportivas - El Paseo El Limón">
+  <meta name="description" content="Accede a la gestión de apuestas">
   <meta name="robots" content="noindex, nofollow">
   <style>
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
       background: #000;
+      color: #E2E8F0;
       font-family: 'Poppins', sans-serif;
-    }
-    iframe {
-      width: 100%;
-      height: 100vh;
-      border: none;
-      display: block;
-    }
-    /* Pantalla de carga */
-    .loader {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #000;
-      color: #ECC94B;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: 1.5rem;
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 500px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      color: #FBD38D;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: #A0AEC0;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #38A169;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
       font-weight: 600;
-      z-index: 9999;
-      transition: opacity 0.8s ease-out;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
     }
-    .loader.fade {
-      opacity: 0;
-      pointer-events: none;
+    .btn:hover {
+      background-color: #2F855A;
+      transform: translateY(-2px);
     }
-    .spinner {
-      font-size: 2rem;
-      margin-top: 20px;
-      animation: spin 1.5s linear infinite;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .logo {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #ECC94B;
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Pantalla de carga -->
-  <div class="loader" id="loader">
-    <div>🚀 Cargando tu app...</div>
-    <div class="spinner">⏳</div>
+  <div class="container">
+    <div class="logo">⚾</div>
+    <h1>POLLA MLB EL PASEO EL LIMÓN</h1>
+    <p>Accede a la gestión de partidos y apuestas con un solo clic.</p>
+    <a href="https://script.google.com/macros/s/AKfycbzwVjJzznuCqoTKR2eH1YIOaZAf9hTMWFENmO4FoHU95Vnw9vToyL1u0NHKn2IB6CTi/exec" 
+       target="_blank" 
+       class="btn">
+      🔓 ENTRAR A LA APP
+    </a>
   </div>
-
-  <!-- Tu app de Google Apps Script -->
-  <iframe 
-    src="https://script.google.com/macros/s/AKfycbzwVjJzznuCqoTKR2eH1YIOaZAf9hTMWFENmO4FoHU95Vnw9vToyL1u0NHKn2IB6CTi/exec"
-    title="Aplicación de gestión de partidos"
-    loading="lazy"
-    allow="fullscreen"
-    onload="document.getElementById('loader').classList.add('fade')">
-  </iframe>
-
-  <!-- Script para ocultar loader si tarda mucho -->
-  <script>
-    setTimeout(() => {
-      const loader = document.getElementById('loader');
-      if (loader && !loader.classList.contains('fade')) {
-        loader.classList.add('fade');
-      }
-    }, 8000);
-  </script>
 </body>
 </html>
