@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>POLLA MLB EL PASEO EL LIMÓN</title>
-  <meta name="description" content="Gestión de apuestas deportivas">
+  <meta name="description" content="Gestión de apuestas deportivas - El Paseo El Limón">
+  <meta name="robots" content="noindex, nofollow">
   <style>
     body, html {
       margin: 0;
@@ -20,6 +21,7 @@
       border: none;
       display: block;
     }
+    /* Pantalla de carga */
     .loader {
       position: fixed;
       top: 0; left: 0;
@@ -30,37 +32,51 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      font-weight: 600;
       z-index: 9999;
-      transition: opacity 0.5s ease-out;
+      transition: opacity 0.8s ease-out;
     }
     .loader.fade {
       opacity: 0;
       pointer-events: none;
     }
+    .spinner {
+      font-size: 2rem;
+      margin-top: 20px;
+      animation: spin 1.5s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Pantalla de carga -->
   <div class="loader" id="loader">
     <div>🚀 Cargando tu app...</div>
-    <div>⏳</div>
+    <div class="spinner">⏳</div>
   </div>
 
+  <!-- Tu app de Google Apps Script -->
   <iframe 
-    src="https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbzwVjJzznuCqoTKR2eH1YIOaZAf9hTMWFENmO4FoHU95Vnw9vToyL1u0NHKn2IB6CTi/exec/exec"
+    src="https://script.google.com/macros/s/AKfycbzwVjJzznuCqoTKR2eH1YIOaZAf9hTMWFENmO4FoHU95Vnw9vToyL1u0NHKn2IB6CTi/exec"
     title="Aplicación de gestión de partidos"
     loading="lazy"
+    allow="fullscreen"
     onload="document.getElementById('loader').classList.add('fade')">
   </iframe>
 
+  <!-- Script para ocultar loader si tarda mucho -->
   <script>
     setTimeout(() => {
       const loader = document.getElementById('loader');
       if (loader && !loader.classList.contains('fade')) {
         loader.classList.add('fade');
       }
-    }, 5000);
+    }, 8000);
   </script>
 </body>
 </html>
